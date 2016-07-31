@@ -203,20 +203,24 @@
 
 //  Here's a stub of a function you can use!
 
-//  function reverseString() {
-//    var msg = "Porcupines are cute";
-//
-//    // do some stuff here to reverse that string into a new variable
-//    var newMsg = "This should be the reversed string";
-//
-//    alert(newMsg);
-//  }
+  function reverseString() {
+    var msg = "Porcupines are cute";
+
+    // do some stuff here to reverse that string into a new variable
+
+    // RR: Split the string into an array where each element is a character;
+    //     reverse the array; join it back into a string.
+
+    var newMsg = msg.split("").reverse().join("");
+
+    alert(newMsg);
+  }
 
 // Here's a stub of event stuff you could use
-//
 
-//  var button = document.getElementById('reverse-string-button');
-//  button.addEventListener('click', reverseString);
+  var button = document.getElementById('reverse-string-button');
+  button.addEventListener('click', reverseString);
+
 </script>
 
 
@@ -228,7 +232,7 @@
 <p>You should use jQuery for these parts.</p>
 <p>We didn't include jQuery in this document, though&mdash;so your first task is to include it!</p>
 
-
+<script src="https://code.jquery.com/jquery.js"></script>
 
 <h3>Finding the Button</h3>
 <p>
@@ -239,9 +243,13 @@
   <input type="button" class="tricky-to-find" value="Pop-Up Please!">
 </fieldset>
 
+
+
 <script>
   "use strict";
-  // code here for above problem
+
+  $('.tricky-to-find').click(function () { alert("Found me!")} );
+
 </script>
 
 <div class="hint">
@@ -269,7 +277,10 @@
 
 <script>
   "use strict";
-  // put your code here
+
+  // My brother Jacob.
+  $('#kittenz-rule').attr("src","https://tinyurl.com/JakeNorman");
+
 </script>
 
 <div class="hint">
@@ -303,7 +314,15 @@
 
 <script>
   "use strict";
-  // put your code here
+
+  function makePorcupine(evt) {
+    setTimeout(function() {
+      $("#cute-porcupine-image").fadeIn(4000);
+    }, 1000); 
+  }
+
+  $('#make-a-porcupine').click(makePorcupine);
+
 </script>
 
 <div class="hint">
