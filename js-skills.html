@@ -98,7 +98,11 @@
 
 <script>
   "use strict";
-  // code here for above problem
+  
+  var popupButton = document.getElementById('popup-alert-button');
+
+  popupButton.addEventListener('click', function () { alert("I'm a popup!"); });
+
 </script>
 
 
@@ -113,11 +117,21 @@
   <i id="message-to-change">hello</i>
   <button id="change-hello-to-goodbye-button">Turn <b>Hello</b> Into <b>Goodbye</b></button>
   <!-- Hey, look, that was another way to do a button - what might it be good for? -->
+  <!-- RR: I notice there's HTML inside the <button> but an <input type="button"> can't have that. -->
 </fieldset>
 
 <script>
   "use strict";
-  // code here for above-problem
+  
+  var messageButton = document.getElementById('change-hello-to-goodbye-button');
+
+  function changeMessage(evt){
+    var message = document.getElementById('message-to-change');
+    message.innerText = "goodbye";
+  }
+
+  messageButton.addEventListener('click', changeMessage);
+
 </script>
 
 <div class="hint">
@@ -147,7 +161,15 @@
 
 <script>
   "use strict";
-  // code here for above problem
+  
+  var noSubmitForm = document.getElementById('prevent-form-submission-form');
+
+  function noSubmit(evt) {
+    evt.preventDefault();
+    alert("I'm not submitting!");
+  }
+
+  noSubmitForm.addEventListener('submit', noSubmit);
 </script>
 
 <div class="hint">
