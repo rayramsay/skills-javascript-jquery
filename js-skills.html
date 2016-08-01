@@ -208,7 +208,7 @@
 
     // do some stuff here to reverse that string into a new variable
 
-    // RR: Split the string into an array where each element is a character;
+    // RR: Split the string into an array where each item is a character;
     //     reverse the array; join it back into a string.
 
     var newMsg = msg.split("").reverse().join("");
@@ -366,7 +366,16 @@
 
 <script>
   "use strict";
-  // put your code here
+
+  function agreeableForm(evt) {
+    evt.preventDefault();
+    var food = document.getElementById('favorite-food-input').value;
+    var message = document.getElementById('agreeable-text');
+    message.innerText = "I like " + food + ", too.";
+  }
+  
+  $('#agreeable-form').submit(agreeableForm);
+
 </script>
 
 <div class="hint">
@@ -476,7 +485,25 @@
 
     var PRIME_COLORS = ['orange', 'midnightblue', 'darkgoldenrod', 'green', 'purple'];
 
-  // put the rest of your code here
+  function printPrimes(evt) {
+    var primes = [];
+      for (var i = 2; i < 12; i++) {
+        for (var x = 2; x < i; x++) {
+          if (i % x === 0) {
+            console.log(i + " equals " + x + " * " + i/x);
+            break;
+          } else {
+            console.log(i + " is prime");
+            primes.push(i);
+          }
+        }
+      }
+    console.log(primes)
+    // var message = document.getElementById('agreeable-text');
+    // message.innerText = primes;
+  }
+
+  $('#make-prime-boxes').click(printPrimes);
 </script>
 
 
